@@ -1,0 +1,73 @@
+// =========================
+// Zomato Clone JavaScript
+// =========================
+
+
+// Search Box
+
+const searchBox = document.querySelector("main input");
+
+searchBox.addEventListener("focus", function() {
+  searchBox.placeholder = "Try 'Pizza', 'Burger', 'Biryani'...";
+});
+
+searchBox.addEventListener("blur", function() {
+  searchBox.placeholder = "Search for restaurant, cuisine or a dish";
+});
+
+
+// Search Animation
+
+searchBox.addEventListener("keypress", function(event) {
+  
+  if (event.key === "Enter") {
+    
+    const searchValue = searchBox.value.trim();
+    
+    if (searchValue === "") {
+      
+      alert("Please enter something to search!");
+      
+    } else {
+      
+      alert("Searching for: " + searchValue);
+      
+    }
+  }
+});
+
+
+// Get App Click
+
+const getApp = document.querySelector(".Logo");
+
+getApp.addEventListener("click", function() {
+  
+  alert("Zomato App Download Coming Soon!");
+  
+});
+
+
+
+// Page Load Animation
+
+window.addEventListener("load", function() {
+  
+  document.body.classList.add("loaded");
+  
+});
+
+
+// Mouse movement effect on Main Section
+
+const mainSection = document.querySelector("main");
+
+mainSection.addEventListener("mousemove", function(event) {
+  
+  const x = (event.clientX / window.innerWidth - 0.5) * 10;
+  const y = (event.clientY / window.innerHeight - 0.5) * 10;
+  
+  mainSection.style.backgroundPosition =
+    `${50 + x}% ${50 + y}%`;
+  
+});
